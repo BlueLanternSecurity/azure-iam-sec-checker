@@ -1,0 +1,242 @@
+[
+  {
+    "permission": "AppRoleAssignment.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows an application to manage role assignments for any enterprise application in the tenant, potentially enabling an attacker to grant themselves other high-privileged roles."
+  },
+  {
+    "permission": "RoleManagement.ReadWrite.Directory",
+    "risk": "privesc",
+    "reason": "Grants the ability to elevate privileges to the Global Administrator role or manage other directory roles, a significant security risk."
+  },
+  {
+    "permission": "Directory.ReadWrite.All",
+    "risk": "persistence",
+    "reason": "Allows an application to read and write data across the entire Azure Active Directory (Azure AD/Entra ID), including managing group memberships, which could lead to unauthorized access to resources."
+  },
+  {
+    "permission": "User.ReadWrite.All",
+    "risk": "data integrity",
+    "reason": "Permits full read and write access to all user profiles, including the ability to reset passwords and modify sensitive properties."
+  },
+  {
+    "permission": "Application.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Enables an attacker to modify the credentials of a more privileged application, allowing impersonation and potential access up to the Global Administrator level."
+  },
+  {
+    "permission": "Policy.ReadWrite.AuthenticationMethod",
+    "risk": "privesc",
+    "reason": "Allows an attacker to enable powerful authentication methods like the Temporary Access Pass (TAP) tenant-wide, facilitating user account takeover."
+  },
+  {
+    "permission": "Sites.FullControl.All",
+    "risk": "data integrity",
+    "reason": "Grants extensive control over all SharePoint site collections, allowing for full data access or modification."
+  },
+  {
+    "permission": "Sites.ReadWrite.All",
+    "risk": "exposure",
+    "reason": "Grants extensive control over all SharePoint site collections, allowing for full data access or modification."
+  },
+  {
+    "permission": "Organization.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows an attacker to add a trusted root certificate to Entra ID and authenticate as any user, including a Global Administrator."
+  },
+  {
+    "permission": "RoleAssignmentSchedule.ReadWrite.Directory",
+    "risk": "privesc",
+    "reason": "Allows creating active directory role assignments through Privileged Identity Management (PIM), so any principal, including the application itself, can be made a Global Administrator."
+  },
+  {
+    "permission": "RoleEligibilitySchedule.ReadWrite.Directory",
+    "risk": "privesc",
+    "reason": "Allows making any principal eligible for any directory role through Privileged Identity Management (PIM), including Global Administrator; the principal can then activate the role."
+  },
+  {
+    "permission": "PrivilegedAccess.ReadWrite.AzureADGroup",
+    "risk": "privesc",
+    "reason": "Allows managing membership and ownership of groups through PIM for Groups, including role-assignable groups that hold privileged directory roles."
+  },
+  {
+    "permission": "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup",
+    "risk": "privesc",
+    "reason": "Allows adding active members or owners to groups through PIM for Groups, including role-assignable groups that hold privileged directory roles."
+  },
+  {
+    "permission": "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup",
+    "risk": "privesc",
+    "reason": "Allows making any principal an eligible member or owner of a group through PIM for Groups, including role-assignable groups that hold privileged directory roles."
+  },
+  {
+    "permission": "UserAuthenticationMethod.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows registering a new authentication method, such as a Temporary Access Pass or a phone number, for any user, enabling takeover of accounts including administrators."
+  },
+  {
+    "permission": "User-PasswordProfile.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows resetting users' passwords, enabling takeover of their accounts."
+  },
+  {
+    "permission": "Domain.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows adding a federated domain or changing a domain's federation settings, so an attacker-controlled identity provider can sign in as any user of that domain, including a Global Administrator."
+  },
+  {
+    "permission": "Group.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows changing the membership and ownership of any group that is not role-assignable, granting whatever those groups confer, such as Azure roles, application access or exclusion from conditional access policies."
+  },
+  {
+    "permission": "GroupMember.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows changing the membership of any group that is not role-assignable, granting whatever those groups confer, such as Azure roles, application access or exclusion from conditional access policies."
+  },
+  {
+    "permission": "DelegatedPermissionGrant.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows granting any delegated permission to any application on behalf of all users, so high-privilege delegated access can be consented to without an administrator."
+  },
+  {
+    "permission": "Policy.ReadWrite.PermissionGrant",
+    "risk": "privesc",
+    "reason": "Allows changing the tenant's consent policies, for example so that users can consent to high-privilege permissions without administrator approval."
+  },
+  {
+    "permission": "EntitlementManagement.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows creating access packages and assigning them to any principal, which grants the group memberships, application roles and SharePoint site access the packages contain."
+  },
+  {
+    "permission": "RoleManagement.ReadWrite.Exchange",
+    "risk": "privesc",
+    "reason": "Allows changing Exchange Online role assignments, so a principal can be granted Exchange administrative roles, including ones that give access to mailboxes."
+  },
+  {
+    "permission": "DeviceManagementConfiguration.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows deploying configuration and scripts to Intune-managed devices, which can run code with system privileges on them, including administrator workstations."
+  },
+  {
+    "permission": "DeviceManagementScripts.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows creating and assigning Intune scripts, which run code with system privileges on managed devices, including administrator workstations."
+  },
+  {
+    "permission": "DeviceManagementApps.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows deploying applications to Intune-managed devices, which can install and run attacker-controlled software on them."
+  },
+  {
+    "permission": "DeviceManagementRBAC.ReadWrite.All",
+    "risk": "privesc",
+    "reason": "Allows changing Intune role assignments, so a principal can be given administrative control over managed devices."
+  },
+  {
+    "permission": "DeviceLocalCredential.Read.All",
+    "risk": "privesc",
+    "reason": "Allows reading the local administrator passwords that Windows LAPS backs up to Entra ID, giving administrator access to those devices."
+  },
+  {
+    "permission": "Policy.ReadWrite.ConditionalAccess",
+    "risk": "defense evasion",
+    "reason": "Allows changing, disabling or deleting conditional access policies, removing controls such as MFA and device compliance requirements."
+  },
+  {
+    "permission": "Policy.ReadWrite.SecurityDefaults",
+    "risk": "defense evasion",
+    "reason": "Allows turning off security defaults, removing the baseline MFA requirements in tenants that rely on them."
+  },
+  {
+    "permission": "Policy.ReadWrite.Authorization",
+    "risk": "defense evasion",
+    "reason": "Allows changing the tenant's authorization policy, which sets what ordinary users and guests may do, such as registering applications or consenting to them."
+  },
+  {
+    "permission": "RoleManagementPolicy.ReadWrite.Directory",
+    "risk": "defense evasion",
+    "reason": "Allows changing Privileged Identity Management (PIM) role settings, such as removing the approval, MFA or justification required to activate a privileged directory role."
+  },
+  {
+    "permission": "RoleManagementPolicy.ReadWrite.AzureADGroup",
+    "risk": "defense evasion",
+    "reason": "Allows changing PIM for Groups settings, such as removing the approval, MFA or justification required to activate membership of a privileged group."
+  },
+  {
+    "permission": "Policy.ReadWrite.CrossTenantAccess",
+    "risk": "persistence",
+    "reason": "Allows changing cross-tenant access settings, such as opening inbound access or trusting MFA and device claims from another tenant, which can create a lasting way in from a tenant an attacker controls."
+  },
+  {
+    "permission": "IdentityProvider.ReadWrite.All",
+    "risk": "persistence",
+    "reason": "Allows adding or changing the identity providers used for external identities, so accounts from an attacker-controlled provider can sign in."
+  },
+  {
+    "permission": "Mail.Send",
+    "risk": "impersonation",
+    "reason": "Allows sending mail as any user in the tenant, which can be used for phishing or fraud that appears to come from a trusted colleague."
+  },
+  {
+    "permission": "Mail.Read",
+    "risk": "exposure",
+    "reason": "Allows reading the mail in every mailbox in the tenant."
+  },
+  {
+    "permission": "Mail.ReadWrite",
+    "risk": "exposure",
+    "reason": "Allows reading, changing and deleting the mail in every mailbox in the tenant."
+  },
+  {
+    "permission": "MailboxSettings.ReadWrite",
+    "risk": "exposure",
+    "reason": "Allows changing any user's mailbox settings, including creating inbox rules that forward or hide mail without the user noticing."
+  },
+  {
+    "permission": "Files.Read.All",
+    "risk": "exposure",
+    "reason": "Allows reading every file in OneDrive and SharePoint across the tenant."
+  },
+  {
+    "permission": "Files.ReadWrite.All",
+    "risk": "exposure",
+    "reason": "Allows reading, changing and deleting every file in OneDrive and SharePoint across the tenant."
+  },
+  {
+    "permission": "Sites.Read.All",
+    "risk": "exposure",
+    "reason": "Allows reading the documents and list items in every SharePoint site collection."
+  },
+  {
+    "permission": "Sites.Manage.All",
+    "risk": "data integrity",
+    "reason": "Allows creating, editing and deleting items and lists in every SharePoint site collection."
+  },
+  {
+    "permission": "Chat.Read.All",
+    "risk": "exposure",
+    "reason": "Allows reading every Teams chat message in the tenant."
+  },
+  {
+    "permission": "ChannelMessage.Read.All",
+    "risk": "exposure",
+    "reason": "Allows reading every Teams channel message in the tenant."
+  },
+  {
+    "permission": "eDiscovery.ReadWrite.All",
+    "risk": "exposure",
+    "reason": "Allows creating eDiscovery cases and searches and exporting their results, which can collect mail, chats and files from across the tenant."
+  },
+  {
+    "permission": "BitlockerKey.Read.All",
+    "risk": "exposure",
+    "reason": "Allows reading the BitLocker recovery keys of all devices, which unlock a device's disk for anyone who holds the device or a copy of the disk."
+  },
+  {
+    "permission": "DeviceManagementManagedDevices.PrivilegedOperations.All",
+    "risk": "data integrity",
+    "reason": "Allows remote actions on Intune-managed devices, such as wiping them or resetting their passcodes."
+  }
+]

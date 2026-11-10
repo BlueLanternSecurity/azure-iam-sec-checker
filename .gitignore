@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test and tool caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials: dotenv files in any spelling, keys and certificates
+.env
+.env.*
+*.env
+*.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Command output saved in the repository root; it describes a real tenant
+/*.json
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
