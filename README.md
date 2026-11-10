@@ -136,4 +136,4 @@ See [SECURITY.md](SECURITY.md) for how to report a vulnerability.
 
 Apache-2.0. See [LICENSE](LICENSE).
 
-Built and maintained by Blue Lantern Security.
+Built and maintained by Blue Lantern Security. To find out more about the company, visit [bluelanternsecurity.com](https://bluelanternsecurity.com).
